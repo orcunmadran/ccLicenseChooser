@@ -13,7 +13,7 @@
         top: 15px; /* Kutunun üst kenarından aşağıya hizalar */
         width: 30px;
         height: 30px;
-        background-color: #007bff; /* Bootstrap primary blue */
+        background-color: #6c757d; /* Bootstrap secondary gray */
         color: white;
         border-radius: 50%;
         display: flex;
@@ -23,6 +23,16 @@
         font-size: 0.9rem;
         z-index: 10; /* Diğer içeriklerin üzerinde görünmesini sağlar */
         box-shadow: 0 0 0 3px #fff; /* Beyaz bir dış halka ekler */
+    }
+
+    .step-number.completed {
+        background-color: #28a745; /* Bootstrap success green */
+        font-size: 0; /* Numarayı gizler */
+    }
+
+    .step-number.completed::before {
+        content: "\2713"; /* Unicode tick symbol */
+        font-size: 1.2rem;
     }
 </style>
 <body>

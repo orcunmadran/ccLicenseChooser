@@ -62,6 +62,17 @@ function updateLicense() {
     const commercial = document.querySelector('input[name="commercial"]:checked')?.value;
     const derivatives = document.querySelector('input[name="derivatives"]:checked')?.value;
 
+    // --- Step Completion Logic ---
+    // This should run every time to reflect the current state.
+    document.getElementById('step1').querySelector('.step-number').classList.toggle('completed', !!attribution);
+    document.getElementById('step2').querySelector('.step-number').classList.toggle('completed', !!commercial);
+    document.getElementById('step3').querySelector('.step-number').classList.toggle('completed', !!derivatives);
+
+    // If no choice is made for attribution, hide everything and return.
+    if (!attribution) {
+        return;
+    }
+
     // Metadata inputs
     const workTitle = document.getElementById('workTitle').value;
     const creatorName = document.getElementById('creatorName').value;
@@ -80,7 +91,9 @@ function updateLicense() {
         // If attribution is 'yes', ensure other questions are enabled
         commercialRadios.forEach(radio => radio.disabled = false);
         derivativesRadios.forEach(radio => radio.disabled = false);
-    } else {
+    } else { // This case should not be hit if the initial !attribution check is there, but for safety:
+        document.getElementById('resetButton').style.display = 'none';
+        document.getElementById('metadataSection').style.display = 'none';
         // If attribution is not selected, do nothing and let the placeholder show.
         return;
     }
@@ -88,11 +101,11 @@ function updateLicense() {
     // If attribution is 'yes', we need answers for the other two.
     // If attribution is 'no', we can proceed directly.
     if (attribution === 'yes' && (!commercial || !derivatives)) {
+        document.getElementById('resetButton').style.display = 'block'; // Show reset button as soon as step 1 is done
+        document.getElementById('metadataSection').style.display = 'none';
         // If not all questions are answered, do nothing and let the placeholder show.
         return;
     }
-
-
     let license = '';
     let licenseNameKey = '';
     let licenseUrl = '';
@@ -276,6 +289,11 @@ function resetForm() {
 
     // 5. Re-enable all radio buttons that might have been disabled
     document.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = false);
+
+    // 6. Reset step icons
+    document.getElementById('step1').querySelector('.step-number').classList.remove('completed');
+    document.getElementById('step2').querySelector('.step-number').classList.remove('completed');
+    document.getElementById('step3').querySelector('.step-number').classList.remove('completed');
 }
 
 // Add event listener for the reset button
