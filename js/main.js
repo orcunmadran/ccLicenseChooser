@@ -1,5 +1,10 @@
 let currentTranslations = {};
 
+const availableLanguages = [
+    { code: 'en', name: 'English' },
+    { code: 'tr', name: 'Türkçe' }
+];
+
 async function changeLanguage(lang) {
     const response = await fetch(`locales/${lang}.json`);
     const translations = await response.json();
@@ -21,8 +26,28 @@ async function changeLanguage(lang) {
     updateLicense();
 }
 
+function populateLanguageDropdown() {
+    const dropdownMenu = document.querySelector('.dropdown-menu[aria-labelledby="languageDropdown"]');
+    dropdownMenu.innerHTML = ''; // Clear existing static options
+
+    availableLanguages.forEach(lang => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.classList.add('dropdown-item');
+        link.href = '#';
+        link.textContent = lang.name;
+        link.onclick = (e) => {
+            e.preventDefault();
+            changeLanguage(lang.code);
+        };
+        listItem.appendChild(link);
+        dropdownMenu.appendChild(listItem);
+    });
+}
+
 // On page load, set the language
 document.addEventListener('DOMContentLoaded', async () => {
+    populateLanguageDropdown();
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
     const savedLang = localStorage.getItem('language');
