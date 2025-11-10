@@ -65,8 +65,8 @@ function updateLicense() {
     // --- Step Completion Logic ---
     // This should run every time to reflect the current state.
     document.getElementById('step1').querySelector('.step-number').classList.toggle('completed', !!attribution);
-    document.getElementById('step2').querySelector('.step-number').classList.toggle('completed', !!commercial);
-    document.getElementById('step3').querySelector('.step-number').classList.toggle('completed', !!derivatives);
+    document.getElementById('step2').querySelector('.step-number').classList.toggle('completed', !!commercial || attribution === 'no');
+    document.getElementById('step3').querySelector('.step-number').classList.toggle('completed', !!derivatives || attribution === 'no');
 
     // If no choice is made for attribution, hide everything and return.
     if (!attribution) {
