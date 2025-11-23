@@ -9,11 +9,11 @@
 <style>
     .step-number {
         position: absolute;
-        left: -15px; /* Kutunun sol kenarından dışarı taşır */
-        top: 15px; /* Kutunun üst kenarından aşağıya hizalar */
+        left: -15px;
+        top: 15px;
         width: 30px;
         height: 30px;
-        background-color: #6c757d; /* Bootstrap secondary gray */
+        background-color: #6c757d;
         color: white;
         border-radius: 50%;
         display: flex;
@@ -21,17 +21,17 @@
         justify-content: center;
         font-weight: bold;
         font-size: 0.9rem;
-        z-index: 10; /* Diğer içeriklerin üzerinde görünmesini sağlar */
-        box-shadow: 0 0 0 3px #fff; /* Beyaz bir dış halka ekler */
+        z-index: 10;
+        box-shadow: 0 0 0 3px #fff;
     }
 
     .step-number.completed {
-        background-color: #28a745; /* Bootstrap success green */
-        font-size: 0; /* Numarayı gizler */
+        background-color: #28a745;
+        font-size: 0;
     }
 
     .step-number.completed::before {
-        content: "\2713"; /* Unicode tick symbol */
+        content: "\2713";
         font-size: 1.2rem;
     }
 </style>
@@ -46,7 +46,6 @@
                     Language
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                    <!-- Dil seçenekleri JavaScript tarafından otomatik olarak doldurulacak -->
                 </ul>
             </div>
         </div>
@@ -61,7 +60,6 @@
 
     <div class="container mt-5">
         <div class="row">
-            <!-- Left Column: Questions -->
             <div class="col-lg-5">
                 <div class="text-center">
                     <h2 data-i18n-key="processTitle"></h2>
@@ -116,7 +114,6 @@
                     <button id="resetButton" class="btn btn-danger" style="display: none;" data-i18n-key="resetButton"></button>
                 </div>
             </div>
-            <!-- Right Column: Result -->
             <div class="col-lg-7">
                 <div class="sticky-top text-center" style="top: 20px;">
                     <h2 data-i18n-key="selectedLicense"></h2>
@@ -154,7 +151,6 @@
                             <button id="copyButton" class="btn btn-sm btn-secondary" style="display: none;" data-i18n-key="copyButton"></button>
                         </div>
                         <div id="htmlResult" class="mt-2">
-                            <!-- HTML code will be displayed here -->
                         </div>
                     </div>
                 </div>
