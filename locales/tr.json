@@ -38,5 +38,6 @@
     "fallbackCreatorName": "eser sahibi",
     "copyButton": "Kopyala",
     "copiedButton": "Kopyalandı!",
-    "resetButton": "Seçimleri Temizle"
+    "resetButton": "Seçimleri Temizle",
+    "footerText": "Bu proje, Creative Commons Türkiye tarafından açık kaynak kodlu olarak geliştirilmiştir. Kaynak koduna <a href=\"https://github.com/orcunmadran/ccLicenseChooser\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub üzerinden</a> erişebilirsiniz."
 }
