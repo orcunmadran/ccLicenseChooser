@@ -39,5 +39,5 @@
     "copyButton": "Copy",
     "copiedButton": "Copied!",
     "resetButton": "Reset Choices",
-    "footerText": "This is an open-source project developed by Creative Commons Türkiye. You can access the source code on <a href=\"https://github.com/orcunmadran/ccLicenseChooser\" target=\"_blank\">GitHub</a>."
+    "footerText": "This is an open-source project developed by <a href=\"https://creativecommons.org.tr\" target=\"_blank\">Creative Commons Türkiye</a>.<br>You can access the source code on <a href=\"https://github.com/orcunmadran/ccLicenseChooser\" target=\"_blank\">GitHub</a>."
 }

@@ -39,5 +39,5 @@
     "copyButton": "Kopyala",
     "copiedButton": "Kopyalandı!",
     "resetButton": "Seçimleri Temizle",
-    "footerText": "Bu proje, Creative Commons Türkiye tarafından açık kaynak kodlu olarak geliştirilmiştir. Kaynak koduna <a href=\"https://github.com/orcunmadran/ccLicenseChooser\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub üzerinden</a> erişebilirsiniz."
+    "footerText": "Bu proje, <a href=\"https://creativecommons.org.tr\" target=\"_blank\">Creative Commons Türkiye</a> tarafından açık kaynak kodlu olarak geliştirilmiştir.<br>Kaynak koduna <a href=\"https://github.com/orcunmadran/ccLicenseChooser\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub üzerinden</a> erişebilirsiniz."
 }
